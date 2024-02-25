@@ -5,64 +5,77 @@
     /* font-size: 15px; */
 }
 
-header {
-    /* float: right; */
-    background-color: black;
-    /* width: 100vh; */
+/*NAV*/
+nav {
     width: 100%;
+    background: black;
+    min-height: 2rem;
     position: fixed;
-    padding: 10px;
-    height: 40px;
-    top: 0;
-    /* background-color: black;
-    padding: 10px;
-    height: 60px;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    font-size: 1.4rem; */
-    /* border: solid 1px greenyellow; */
+    top: 0px;
+    z-index: 33;
 }
 
-nav{
-    padding-left: 10px;
-}
-
-.header-list {
+nav ul {
+    padding: 0;
+    margin: 0;
     list-style-type: none;
 }
 
-.header-list>li {
+nav li {
     float: right;
-    margin: 10px 20px;
+    margin-right: 20px;
 }
 
-.header-list a {
-    text-decoration: none;
+nav a {
     color: white;
-    font-size: 1.4rem;
+    font-weight: 1rem;
+    text-decoration: none;
+    display: block;
+    padding: 0.8rem 1rem;
 }
 
-.header-list a:hover {
+nav a:hover {
     text-decoration: underline;
-    background-color: gray;
+    background-color: #444;
 }
 
+/*HEADER*/
 
-.dj-banner {
-    position: absolute;
-    margin-top: 60px;
-
-}
-
-.dj-banner .dj-bg {
+/* .dj-banner .dj-bg {
     display: block;
     margin: 20px auto;
     padding: 20px 0;
     background-image: url(/galeria/header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 40vh;
-    background-size: contain;
+  
+} */
+
+header {
+    background: url('/galeria/header.jpg') no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+    height: 40vh;
+    width: 100%;
+    margin-top: 1rem;
+    padding-top: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.dj-banner {
+    margin-left: 20%;
+    text-align: left;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.dj-text {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: normal;
 }
 
 
@@ -70,10 +83,11 @@ nav{
     width: 60%;
     margin: 0 auto;
     overflow: hidden;
+    margin-top: 5%;
 }
 
 
-/* CSS Sobre nosaltres */
+/* CSS SOBRE NOSALTRES */
 .content-dret {
     width: 100%;
     /* border: 1px solid black; */
@@ -141,11 +155,112 @@ nav{
     margin-right: 10px;
 }
 
-/* CSS carta */
+@media (max-width: 800px) {
+    .content-dret,
+    .content-izq {
+        width: 100%;
+        margin-top: 0; 
+    }
+
+    .img-dret,
+    .img-izq {
+        float: none;
+        width: 100%; 
+        margin-bottom: 10px; 
+    }
+
+    .text-dret,
+    .text-izq {
+        float: none; 
+        width: 100%; 
+        margin-top: 0; 
+    }
+}
+
+
+/* CSS CARTA */
 
 .grid-carta {
     margin-top: 70%;
 }
+
+.menuCentro{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(35, 35, 77);
+    color: white;
+}
+
+.textoCentro{
+    text-align: center;
+}
+
+.Card-Menu{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    /*filas opcional*/
+}
+
+.nmMenu{
+    border: 2px solid blueviolet;
+    /* grid-row: span 2;
+    grid-column: span 1; */
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    
+}
+.nmMenu2{
+    border: 2px solid blueviolet;
+    /* grid-row: span 2;
+    grid-column: span 1; */
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 7;
+    
+}
+
+.InfoMenu{
+    /* grid-column: span 3; */
+        /* grid-row: span 1; */
+    grid-column-start:3 ;
+    grid-column-end:7 ;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.platoRico1{
+    grid-column-start: 3 ;
+    grid-column-end:5 ;
+    grid-row-start:3 ;
+    grid-row-end: 3;
+    width: 100%;
+    height: auto;
+}
+
+.platoRico1 img{
+    width: 100%;
+    height: auto;
+}
+
+.platoRico2{
+    width: 100%;
+    height: auto;
+    grid-column-start: 5 ;
+    grid-column-end:7 ;
+    grid-row-start:3 ;
+    grid-row-end: 4;
+}
+
+.platoRico2 img {
+    width: 100%;
+    height: auto;
+}
+
+
+
 
 
 /* CSS de la galeria de foto con flex */
@@ -170,7 +285,6 @@ nav{
     transition: filter 0.3s ease;
 }
 
-
 .flex-item img {
     filter: brightness(100%);
 }
@@ -189,6 +303,19 @@ nav{
 .flex-item:hover {
     border: 2px solid #3498db;
 }
+
+@media (max-width: 800px) {
+    .flex-item {
+        flex-basis: 47%;
+    }
+}
+
+@media (max-width: 600px) {
+    .flex-item {
+        flex-basis: 100%;
+    }
+}
+
 
 /* CSS del Foooter */
 .footer {
